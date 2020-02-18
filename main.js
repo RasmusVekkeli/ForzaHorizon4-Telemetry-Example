@@ -2,6 +2,9 @@ const dgram = require("dgram");
 
 const server = dgram.createSocket("udp4");
 
+// Change this to change the binded port
+const port = 60022;
+
 const telemetryData = {
 	// Offset 0
 	isRaceOn: false, 		// int32, actually a boolean
@@ -310,5 +313,5 @@ server.on("listening", () => {
 	console.log(`Listening on ${s.address}:${s.port}`);
 });
 
-server.bind(60022);
+server.bind(port);
 
